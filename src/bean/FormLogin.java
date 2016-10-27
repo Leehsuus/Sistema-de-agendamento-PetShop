@@ -5,7 +5,14 @@
  */
 package bean;
 
+import ControleBanco.ControlaBd;
 import java.awt.Color;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 
 /**
@@ -13,13 +20,38 @@ import javax.swing.JOptionPane;
  * @author Leticia
  */
 public class FormLogin extends javax.swing.JFrame {
-
+    Connection con = null;
+    PreparedStatement pst = null;
+    ResultSet rs = null;
     /**
      * Creates new form FormLogin1
+     * @throws java.lang.ClassNotFoundException
      */
-    public FormLogin() {
+    public FormLogin() throws ClassNotFoundException {
         initComponents();
+        con = ControlaBd.conectaBd();
         this.getContentPane().setBackground(new Color (255,204,204));
+    }
+    
+    public void Logar(){
+        String sql= "select * from usuarios where Login = ? and Senha = ?";
+        
+        try{
+            pst = con.prepareStatement(sql);
+            pst.setString(1,lblLoginLogin.getText());
+            pst.setString(2,lblSenhaLogin.getText());
+            
+            rs = pst.executeQuery();
+            
+            if(rs.next()){
+                FormTelaPrincipal.main(null);
+            } else{
+                JOptionPane.showMessageDialog(null,"Usuario ou senha inváidos! ");
+            }
+            
+        }catch(SQLException error){
+            JOptionPane.showMessageDialog(null, error);
+        }
     }
 
     /**
@@ -129,19 +161,7 @@ public class FormLogin extends javax.swing.JFrame {
     }//GEN-LAST:event_btnCancelarActionPerformed
 
     private void btnEntrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEntrarActionPerformed
-        // TODO add your handling code here:
-        String query = "Select u from Usuarios u where u.login = login and senha =senha";
-        query1 = entityManager1.createQuery(query);
-        query1.setParameter("login", lblLoginLogin.getText());
-        query1.setParameter("senha", lblSenhaLogin.getText());
-        list1.clear();
-        list1.addAll(query1.getResultList());
-
-        if(list1.size() == 2){
-            FormTelaPrincipal.main(null);
-        }else{
-        JOptionPane.showMessageDialog(null, "Usuario ou Senha incorretos","Erro", JOptionPane.ERROR_MESSAGE);
-        }
+      Logar();
     }//GEN-LAST:event_btnEntrarActionPerformed
 
     /**
@@ -176,7 +196,11 @@ public class FormLogin extends javax.swing.JFrame {
         java.awt.EventQueue.invokeLater(new Runnable() {
             @Override
             public void run() {
-                new FormLogin().setVisible(true);
+                try {
+                    new FormLogin().setVisible(true);
+                } catch (ClassNotFoundException ex) {
+                    Logger.getLogger(FormLogin.class.getName()).log(Level.SEVERE, null, ex);
+                }
             }
         });
     }
