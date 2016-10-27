@@ -5,6 +5,8 @@
  */
 package bean;
 
+import java.awt.Color;
+
 /**
  *
  * @author Leticia
@@ -17,6 +19,7 @@ public class FormTelaPrincipal extends javax.swing.JFrame {
     public FormTelaPrincipal() {
         initComponents();
         this.setExtendedState(MAXIMIZED_BOTH);
+        this.getContentPane().setBackground(new Color (255,204,204));
     }
 
     /**
@@ -47,6 +50,8 @@ public class FormTelaPrincipal extends javax.swing.JFrame {
         menuClientes = new javax.swing.JMenuItem();
         menuServiços = new javax.swing.JMenuItem();
         menuUsuarios = new javax.swing.JMenuItem();
+        menuOpcoes = new javax.swing.JMenu();
+        menuSairSistema = new javax.swing.JMenuItem();
         menuRelatorios = new javax.swing.JMenu();
 
         jMenuItem1.setText("jMenuItem1");
@@ -63,7 +68,7 @@ public class FormTelaPrincipal extends javax.swing.JFrame {
         setForeground(java.awt.Color.white);
 
         btnNovoCliente.setBackground(new java.awt.Color(255, 204, 204));
-        btnNovoCliente.setText("Novo Cliente");
+        btnNovoCliente.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ImagensSistema/GatoCachorroBotao.png"))); // NOI18N
         btnNovoCliente.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnNovoClienteActionPerformed(evt);
@@ -143,6 +148,11 @@ public class FormTelaPrincipal extends javax.swing.JFrame {
 
         menuClientes.setBackground(new java.awt.Color(255, 204, 204));
         menuClientes.setText("Clientes");
+        menuClientes.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                menuClientesActionPerformed(evt);
+            }
+        });
         menuConsultar.add(menuClientes);
 
         menuServiços.setBackground(new java.awt.Color(255, 204, 204));
@@ -165,6 +175,18 @@ public class FormTelaPrincipal extends javax.swing.JFrame {
 
         jMenuBar1.add(menuConsultar);
 
+        menuOpcoes.setText("Opções");
+
+        menuSairSistema.setText("Sair");
+        menuSairSistema.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                menuSairSistemaActionPerformed(evt);
+            }
+        });
+        menuOpcoes.add(menuSairSistema);
+
+        jMenuBar1.add(menuOpcoes);
+
         menuRelatorios.setText("Relatórios");
         jMenuBar1.add(menuRelatorios);
 
@@ -176,76 +198,79 @@ public class FormTelaPrincipal extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(btnNovoCliente, javax.swing.GroupLayout.PREFERRED_SIZE, 111, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
+                .addComponent(btnNovoCliente, javax.swing.GroupLayout.PREFERRED_SIZE, 79, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(btnAgendarServiço)
-                .addGap(18, 18, 18)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(btnAgenda, javax.swing.GroupLayout.PREFERRED_SIZE, 111, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(66, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btnNovoCliente)
-                    .addComponent(btnAgendarServiço)
-                    .addComponent(btnAgenda))
-                .addContainerGap(247, Short.MAX_VALUE))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(btnNovoCliente))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(32, 32, 32)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(btnAgendarServiço)
+                            .addComponent(btnAgenda))))
+                .addContainerGap(153, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
     private void menuCadastrarClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuCadastrarClienteActionPerformed
-        // TODO add your handling code here:
         FormCadastrarClientes.main(null);
     }//GEN-LAST:event_menuCadastrarClienteActionPerformed
 
     private void menuServiçosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuServiçosActionPerformed
-        // TODO add your handling code here:
+        TabelaServiços.main(null);
         
     }//GEN-LAST:event_menuServiçosActionPerformed
 
     private void menuCadastrarAnimalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuCadastrarAnimalActionPerformed
-        // TODO add your handling code here:
         FormCadastrarAnimais.main(null);
     }//GEN-LAST:event_menuCadastrarAnimalActionPerformed
 
     private void menuAgendarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuAgendarActionPerformed
-        // TODO add your handling code here:
-        FormAgendamento.main(null);
+       FormAgendamento.main(null);
     }//GEN-LAST:event_menuAgendarActionPerformed
 
     private void btnNovoClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnNovoClienteActionPerformed
-        // TODO add your handling code here:
         FormCadastrarClientes.main(null);        
     }//GEN-LAST:event_btnNovoClienteActionPerformed
 
     private void btnAgendarServiçoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAgendarServiçoActionPerformed
-        // TODO add your handling code here:
         FormAgendamento.main(null);        
     }//GEN-LAST:event_btnAgendarServiçoActionPerformed
 
     private void btnAgendaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAgendaActionPerformed
-        // TODO add your handling code here:
         TabelaAgenda.main(null);
     }//GEN-LAST:event_btnAgendaActionPerformed
 
     private void cadastrarUsuarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cadastrarUsuarioActionPerformed
-        // TODO add your handling code here:
         FormCadastrarUsuarios.main(null);
     }//GEN-LAST:event_cadastrarUsuarioActionPerformed
 
     private void menuAgendaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuAgendaActionPerformed
-        // TODO add your handling code here:
         TabelaAgenda.main(null);
     }//GEN-LAST:event_menuAgendaActionPerformed
 
     private void menuUsuariosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuUsuariosActionPerformed
-        // TODO add your handling code here:
         TabelaUsuarios.main(null);
     }//GEN-LAST:event_menuUsuariosActionPerformed
+
+    private void menuClientesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuClientesActionPerformed
+        TabelaClientes.main(null);
+    }//GEN-LAST:event_menuClientesActionPerformed
+
+    private void menuSairSistemaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuSairSistemaActionPerformed
+        this.setDefaultCloseOperation(EXIT_ON_CLOSE);
+    }//GEN-LAST:event_menuSairSistemaActionPerformed
 
     /**
      * @param args the command line arguments
@@ -277,6 +302,7 @@ public class FormTelaPrincipal extends javax.swing.JFrame {
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
+            @Override
             public void run() {
                 new FormTelaPrincipal().setVisible(true);
             }
@@ -301,7 +327,9 @@ public class FormTelaPrincipal extends javax.swing.JFrame {
     private javax.swing.JMenuItem menuCadastrarCliente;
     private javax.swing.JMenuItem menuClientes;
     private javax.swing.JMenu menuConsultar;
+    private javax.swing.JMenu menuOpcoes;
     private javax.swing.JMenu menuRelatorios;
+    private javax.swing.JMenuItem menuSairSistema;
     private javax.swing.JMenuItem menuServiços;
     private javax.swing.JMenuItem menuUsuarios;
     // End of variables declaration//GEN-END:variables

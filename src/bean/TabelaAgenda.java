@@ -5,6 +5,8 @@
  */
 package bean;
 
+import java.awt.Color;
+
 /**
  *
  * @author Leticia
@@ -16,6 +18,7 @@ public class TabelaAgenda extends javax.swing.JFrame {
      */
     public TabelaAgenda() {
         initComponents();
+        this.getContentPane().setBackground(new Color (255,204,204));
     }
 
     /**

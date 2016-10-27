@@ -5,6 +5,7 @@
  */
 package bean;
 
+import java.awt.Color;
 import javax.swing.JOptionPane;
 
 /**
@@ -18,6 +19,7 @@ public class FormLogin extends javax.swing.JFrame {
      */
     public FormLogin() {
         initComponents();
+        this.getContentPane().setBackground(new Color (255,204,204));
     }
 
     /**

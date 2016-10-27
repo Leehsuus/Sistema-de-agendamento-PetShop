@@ -5,17 +5,20 @@
  */
 package bean;
 
+import java.awt.Color;
+
 /**
  *
  * @author Leticia
  */
 public class TabelaServiços extends javax.swing.JFrame {
-
+        
     /**
      * Creates new form TabelaServiços
      */
     public TabelaServiços() {
         initComponents();
+        this.getContentPane().setBackground(new Color (255,204,204));
     }
 
     /**
@@ -37,10 +40,13 @@ public class TabelaServiços extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
+        jTable1.setBackground(new java.awt.Color(255, 204, 204));
+
         org.jdesktop.swingbinding.JTableBinding jTableBinding = org.jdesktop.swingbinding.SwingBindings.createJTableBinding(org.jdesktop.beansbinding.AutoBinding.UpdateStrategy.READ_WRITE, serviçosList, jTable1);
         org.jdesktop.swingbinding.JTableBinding.ColumnBinding columnBinding = jTableBinding.addColumnBinding(org.jdesktop.beansbinding.ELProperty.create("${idServiços}"));
-        columnBinding.setColumnName("Código Serviço");
+        columnBinding.setColumnName("Código do Serviço");
         columnBinding.setColumnClass(Integer.class);
+        columnBinding.setEditable(false);
         columnBinding = jTableBinding.addColumnBinding(org.jdesktop.beansbinding.ELProperty.create("${nomeServiço}"));
         columnBinding.setColumnName("Serviço");
         columnBinding.setColumnClass(String.class);
@@ -59,14 +65,13 @@ public class TabelaServiços extends javax.swing.JFrame {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 375, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(156, 156, 156)
-                        .addComponent(jButton1)))
-                .addContainerGap(15, Short.MAX_VALUE))
+                .addContainerGap()
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 479, Short.MAX_VALUE)
+                .addContainerGap())
+            .addGroup(layout.createSequentialGroup()
+                .addGap(219, 219, 219)
+                .addComponent(jButton1)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)

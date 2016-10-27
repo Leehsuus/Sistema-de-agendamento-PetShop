@@ -74,11 +74,11 @@ public class FormCadastrarClientes extends JPanel {
         estadoField = new javax.swing.JTextField();
         cepField = new javax.swing.JTextField();
         pontoReferenciaField = new javax.swing.JTextField();
-        saveButton = new javax.swing.JButton();
-        refreshButton = new javax.swing.JButton();
-        newButton = new javax.swing.JButton();
+        btnProximo = new javax.swing.JButton();
+        btnRefazer = new javax.swing.JButton();
+        btnNovo = new javax.swing.JButton();
         deleteButton = new javax.swing.JButton();
-        jButton1 = new javax.swing.JButton();
+        btnVoltar = new javax.swing.JButton();
 
         FormListener formListener = new FormListener();
 
@@ -267,17 +267,17 @@ public class FormCadastrarClientes extends JPanel {
         binding = org.jdesktop.beansbinding.Bindings.createAutoBinding(org.jdesktop.beansbinding.AutoBinding.UpdateStrategy.READ, masterTable, org.jdesktop.beansbinding.ELProperty.create("${selectedElement != null}"), pontoReferenciaField, org.jdesktop.beansbinding.BeanProperty.create("enabled"));
         bindingGroup.addBinding(binding);
 
-        saveButton.setBackground(new java.awt.Color(255, 204, 204));
-        saveButton.setText("Próximo");
-        saveButton.addActionListener(formListener);
+        btnProximo.setBackground(new java.awt.Color(255, 204, 204));
+        btnProximo.setText("Próximo");
+        btnProximo.addActionListener(formListener);
 
-        refreshButton.setBackground(new java.awt.Color(255, 204, 204));
-        refreshButton.setText("Refazer");
-        refreshButton.addActionListener(formListener);
+        btnRefazer.setBackground(new java.awt.Color(255, 204, 204));
+        btnRefazer.setText("Refazer");
+        btnRefazer.addActionListener(formListener);
 
-        newButton.setBackground(new java.awt.Color(255, 204, 204));
-        newButton.setText("Novo ");
-        newButton.addActionListener(formListener);
+        btnNovo.setBackground(new java.awt.Color(255, 204, 204));
+        btnNovo.setText("Novo ");
+        btnNovo.addActionListener(formListener);
 
         deleteButton.setBackground(new java.awt.Color(255, 204, 204));
         deleteButton.setText("Apagar");
@@ -287,9 +287,9 @@ public class FormCadastrarClientes extends JPanel {
 
         deleteButton.addActionListener(formListener);
 
-        jButton1.setBackground(new java.awt.Color(255, 204, 204));
-        jButton1.setText("Voltar");
-        jButton1.addActionListener(formListener);
+        btnVoltar.setBackground(new java.awt.Color(255, 204, 204));
+        btnVoltar.setText("Voltar");
+        btnVoltar.addActionListener(formListener);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
@@ -363,19 +363,19 @@ public class FormCadastrarClientes extends JPanel {
                 .addContainerGap())
             .addGroup(layout.createSequentialGroup()
                 .addGap(149, 149, 149)
-                .addComponent(newButton)
+                .addComponent(btnNovo)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(deleteButton)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(refreshButton)
+                .addComponent(btnRefazer)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(btnVoltar, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(saveButton)
+                .addComponent(btnProximo)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        layout.linkSize(javax.swing.SwingConstants.HORIZONTAL, new java.awt.Component[] {deleteButton, newButton, refreshButton, saveButton});
+        layout.linkSize(javax.swing.SwingConstants.HORIZONTAL, new java.awt.Component[] {btnNovo, btnProximo, btnRefazer, deleteButton});
 
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -436,12 +436,12 @@ public class FormCadastrarClientes extends JPanel {
                     .addComponent(pontoReferenciaField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(saveButton)
+                    .addComponent(btnProximo)
                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(refreshButton)
+                        .addComponent(btnRefazer)
                         .addComponent(deleteButton)
-                        .addComponent(newButton)
-                        .addComponent(jButton1)))
+                        .addComponent(btnNovo)
+                        .addComponent(btnVoltar)))
                 .addGap(31, 31, 31))
         );
 
@@ -453,20 +453,20 @@ public class FormCadastrarClientes extends JPanel {
     private class FormListener implements java.awt.event.ActionListener {
         FormListener() {}
         public void actionPerformed(java.awt.event.ActionEvent evt) {
-            if (evt.getSource() == saveButton) {
-                FormCadastrarClientes.this.saveButtonActionPerformed(evt);
+            if (evt.getSource() == btnProximo) {
+                FormCadastrarClientes.this.btnProximoActionPerformed(evt);
             }
-            else if (evt.getSource() == refreshButton) {
-                FormCadastrarClientes.this.refreshButtonActionPerformed(evt);
+            else if (evt.getSource() == btnRefazer) {
+                FormCadastrarClientes.this.btnRefazerActionPerformed(evt);
             }
-            else if (evt.getSource() == newButton) {
-                FormCadastrarClientes.this.newButtonActionPerformed(evt);
+            else if (evt.getSource() == btnNovo) {
+                FormCadastrarClientes.this.btnNovoActionPerformed(evt);
             }
             else if (evt.getSource() == deleteButton) {
                 FormCadastrarClientes.this.deleteButtonActionPerformed(evt);
             }
-            else if (evt.getSource() == jButton1) {
-                FormCadastrarClientes.this.jButton1ActionPerformed(evt);
+            else if (evt.getSource() == btnVoltar) {
+                FormCadastrarClientes.this.btnVoltarActionPerformed(evt);
             }
         }
     }// </editor-fold>//GEN-END:initComponents
@@ -474,7 +474,7 @@ public class FormCadastrarClientes extends JPanel {
     
 
     @SuppressWarnings("unchecked")
-    private void refreshButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_refreshButtonActionPerformed
+    private void btnRefazerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRefazerActionPerformed
         entityManager.getTransaction().rollback();
         entityManager.getTransaction().begin();
         java.util.Collection data = query.getResultList();
@@ -483,7 +483,7 @@ public class FormCadastrarClientes extends JPanel {
         }
         list.clear();
         list.addAll(data);
-    }//GEN-LAST:event_refreshButtonActionPerformed
+    }//GEN-LAST:event_btnRefazerActionPerformed
 
     private void deleteButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_deleteButtonActionPerformed
         int[] selected = masterTable.getSelectedRows();
@@ -496,16 +496,16 @@ public class FormCadastrarClientes extends JPanel {
         list.removeAll(toRemove);
     }//GEN-LAST:event_deleteButtonActionPerformed
 
-    private void newButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_newButtonActionPerformed
+    private void btnNovoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnNovoActionPerformed
         bean.Clientes c = new bean.Clientes();
         entityManager.persist(c);
         list.add(c);
         int row = list.size() - 1;
         masterTable.setRowSelectionInterval(row, row);
         masterTable.scrollRectToVisible(masterTable.getCellRect(row, 0, true));
-    }//GEN-LAST:event_newButtonActionPerformed
+    }//GEN-LAST:event_btnNovoActionPerformed
     
-    private void saveButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_saveButtonActionPerformed
+    private void btnProximoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnProximoActionPerformed
         try {
             entityManager.getTransaction().commit();
             entityManager.getTransaction().begin();
@@ -520,16 +520,23 @@ public class FormCadastrarClientes extends JPanel {
             list.addAll(merged);
         }
         FormCadastrarAnimais.main(null);
-    }//GEN-LAST:event_saveButtonActionPerformed
+        
+        
+        
+    }//GEN-LAST:event_btnProximoActionPerformed
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void btnVoltarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVoltarActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton1ActionPerformed
+    }//GEN-LAST:event_btnVoltarActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTextField bairroField;
     private javax.swing.JLabel bairroLabel;
+    private javax.swing.JButton btnNovo;
+    private javax.swing.JButton btnProximo;
+    private javax.swing.JButton btnRefazer;
+    private javax.swing.JButton btnVoltar;
     private javax.swing.JTextField cepField;
     private javax.swing.JLabel cepLabel;
     private javax.swing.JTextField cnpjField;
@@ -546,13 +553,11 @@ public class FormCadastrarClientes extends JPanel {
     private javax.swing.JLabel estadoLabel;
     private javax.swing.JTextField idClientesField;
     private javax.swing.JLabel idClientesLabel;
-    private javax.swing.JButton jButton1;
     private java.util.List<bean.Clientes> list;
     private javax.swing.JScrollPane masterScrollPane;
     private javax.swing.JTable masterTable;
     private javax.swing.JTextField municipioField;
     private javax.swing.JLabel municipioLabel;
-    private javax.swing.JButton newButton;
     private javax.swing.JTextField nomeDonoField;
     private javax.swing.JLabel nomeDonoLabel;
     private javax.swing.JTextField numeroField;
@@ -560,12 +565,10 @@ public class FormCadastrarClientes extends JPanel {
     private javax.swing.JTextField pontoReferenciaField;
     private javax.swing.JLabel pontoReferenciaLabel;
     private javax.persistence.Query query;
-    private javax.swing.JButton refreshButton;
     private javax.swing.JTextField rgField;
     private javax.swing.JLabel rgLabel;
     private javax.swing.JTextField ruaField;
     private javax.swing.JLabel ruaLabel;
-    private javax.swing.JButton saveButton;
     private javax.swing.JTextField telefone2Field;
     private javax.swing.JLabel telefone2Label;
     private javax.swing.JTextField telefoneField;
