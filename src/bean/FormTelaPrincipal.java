@@ -21,6 +21,10 @@ public class FormTelaPrincipal extends javax.swing.JFrame {
         this.setExtendedState(MAXIMIZED_BOTH);
         this.getContentPane().setBackground(new Color (255,204,204));
     }
+    
+    public void BtnSair(){
+        //ação fechar programa
+    }
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -84,7 +88,7 @@ public class FormTelaPrincipal extends javax.swing.JFrame {
         });
 
         btnAgendarServiço.setBackground(new java.awt.Color(255, 204, 204));
-        btnAgendarServiço.setText("Agendar serviço");
+        btnAgendarServiço.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ImagensSistema/CachorroBotão.jpg"))); // NOI18N
         btnAgendarServiço.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnAgendarServiçoActionPerformed(evt);
@@ -199,11 +203,11 @@ public class FormTelaPrincipal extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(btnNovoCliente, javax.swing.GroupLayout.PREFERRED_SIZE, 79, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(btnAgendarServiço)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(btnAgenda, javax.swing.GroupLayout.PREFERRED_SIZE, 111, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(66, Short.MAX_VALUE))
+                .addContainerGap(84, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -211,13 +215,13 @@ public class FormTelaPrincipal extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addContainerGap()
-                        .addComponent(btnNovoCliente))
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(btnNovoCliente, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(btnAgendarServiço, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(32, 32, 32)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(btnAgendarServiço)
-                            .addComponent(btnAgenda))))
-                .addContainerGap(153, Short.MAX_VALUE))
+                        .addGap(76, 76, 76)
+                        .addComponent(btnAgenda)))
+                .addContainerGap(168, Short.MAX_VALUE))
         );
 
         pack();
@@ -269,7 +273,7 @@ public class FormTelaPrincipal extends javax.swing.JFrame {
     }//GEN-LAST:event_menuClientesActionPerformed
 
     private void menuSairSistemaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuSairSistemaActionPerformed
-        this.setDefaultCloseOperation(EXIT_ON_CLOSE);
+        
     }//GEN-LAST:event_menuSairSistemaActionPerformed
 
     /**

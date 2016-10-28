@@ -46,7 +46,7 @@ public class FormLogin extends javax.swing.JFrame {
             if(rs.next()){
                 FormTelaPrincipal.main(null);
             } else{
-                JOptionPane.showMessageDialog(null,"Usuario ou senha inváidos! ");
+                JOptionPane.showMessageDialog(null,"Usuário ou senha inválidos! ");
             }
             
         }catch(SQLException error){
@@ -74,7 +74,7 @@ public class FormLogin extends javax.swing.JFrame {
         btnEntrar = new javax.swing.JButton();
         btnCancelar = new javax.swing.JButton();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
         jPanel1.setBackground(new java.awt.Color(255, 204, 204));
 
@@ -162,6 +162,7 @@ public class FormLogin extends javax.swing.JFrame {
 
     private void btnEntrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEntrarActionPerformed
       Logar();
+      this.dispose();
     }//GEN-LAST:event_btnEntrarActionPerformed
 
     /**

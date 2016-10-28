@@ -92,7 +92,6 @@ public class TabelaClientes extends javax.swing.JFrame {
         estadoLabel = new javax.swing.JLabel();
         cepLabel = new javax.swing.JLabel();
         pontoReferenciaLabel = new javax.swing.JLabel();
-        lblIdClientes = new javax.swing.JTextField();
         lblNomeDono = new javax.swing.JTextField();
         lblTelefone = new javax.swing.JTextField();
         lblCelular = new javax.swing.JTextField();
@@ -119,6 +118,7 @@ public class TabelaClientes extends javax.swing.JFrame {
         numeroLabel = new javax.swing.JLabel();
         lblPontoRef = new javax.swing.JTextField();
         btnVoltar = new javax.swing.JButton();
+        lblIdClientes = new javax.swing.JFormattedTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setBackground(new java.awt.Color(255, 204, 204));
@@ -151,25 +151,55 @@ public class TabelaClientes extends javax.swing.JFrame {
 
         pontoReferenciaLabel.setText("Ponto de Referência:");
 
+        lblNomeDono.setEnabled(false);
+
+        lblTelefone.setEnabled(false);
+
+        lblCelular.setEnabled(false);
+
+        lblCpf.setEnabled(false);
+
+        lblRg.setEnabled(false);
+
         idClientesLabel.setText("Código Cliente:");
 
+        lblCnpj.setEnabled(false);
+
         nomeDonoLabel.setText("Nome:");
+
+        lblEmail.setEnabled(false);
 
         telefoneLabel.setText("Telefone:");
 
         telefone2Label.setText("Celular:");
 
+        lblRua.setEnabled(false);
+
+        lblNumero.setEnabled(false);
+
         cpfLabel.setText("Cpf:");
+
+        lblComplemento.setEnabled(false);
 
         rgLabel.setText("Rg:");
 
+        lblBairro.setEnabled(false);
+
         cnpjLabel.setText("Cnpj:");
+
+        lblMunicipio.setEnabled(false);
 
         emailLabel.setText("Email:");
 
+        lblEstado.setEnabled(false);
+
         ruaLabel.setText("Rua:");
 
+        lblCep.setEnabled(false);
+
         numeroLabel.setText("Número:");
+
+        lblPontoRef.setEnabled(false);
 
         btnVoltar.setBackground(new java.awt.Color(255, 204, 204));
         btnVoltar.setText("Voltar");
@@ -178,6 +208,8 @@ public class TabelaClientes extends javax.swing.JFrame {
                 btnVoltarActionPerformed(evt);
             }
         });
+
+        lblIdClientes.setEnabled(false);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -201,7 +233,7 @@ public class TabelaClientes extends javax.swing.JFrame {
                                             .addComponent(bairroLabel)
                                             .addComponent(estadoLabel)
                                             .addComponent(pontoReferenciaLabel))
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 10, Short.MAX_VALUE))
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                                     .addGroup(layout.createSequentialGroup()
                                         .addGap(0, 0, Short.MAX_VALUE)
                                         .addComponent(idClientesLabel)
@@ -248,9 +280,9 @@ public class TabelaClientes extends javax.swing.JFrame {
                                                 .addComponent(lblEstado, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
                                                 .addGap(18, 18, 18)
                                                 .addComponent(cepLabel)))
-                                        .addGap(0, 78, Short.MAX_VALUE))
+                                        .addGap(0, 120, Short.MAX_VALUE))
                                     .addGroup(layout.createSequentialGroup()
-                                        .addComponent(lblIdClientes, javax.swing.GroupLayout.PREFERRED_SIZE, 61, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(lblIdClientes, javax.swing.GroupLayout.PREFERRED_SIZE, 57, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addGap(18, 18, 18)
                                         .addComponent(nomeDonoLabel)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -276,12 +308,12 @@ public class TabelaClientes extends javax.swing.JFrame {
                     .addComponent(jLabel1))
                 .addGap(18, 18, 18)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 86, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
+                .addGap(20, 20, 20)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(idClientesLabel)
-                    .addComponent(lblIdClientes, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(nomeDonoLabel)
-                    .addComponent(lblNomeDono, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(lblNomeDono, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(lblIdClientes, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(telefoneLabel)
@@ -330,7 +362,7 @@ public class TabelaClientes extends javax.swing.JFrame {
                     .addComponent(lblPontoRef, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addComponent(btnVoltar)
-                .addContainerGap(19, Short.MAX_VALUE))
+                .addContainerGap(17, Short.MAX_VALUE))
         );
 
         pack();
@@ -412,7 +444,7 @@ public class TabelaClientes extends javax.swing.JFrame {
     private javax.swing.JTextField lblCpf;
     private javax.swing.JTextField lblEmail;
     private javax.swing.JTextField lblEstado;
-    private javax.swing.JTextField lblIdClientes;
+    private javax.swing.JFormattedTextField lblIdClientes;
     private javax.swing.JTextField lblMunicipio;
     private javax.swing.JTextField lblNomeDono;
     private javax.swing.JTextField lblNumero;

@@ -70,7 +70,7 @@
                                           <Component id="estadoLabel" alignment="1" min="-2" max="-2" attributes="0"/>
                                           <Component id="pontoReferenciaLabel" alignment="1" min="-2" max="-2" attributes="0"/>
                                       </Group>
-                                      <EmptySpace pref="10" max="32767" attributes="0"/>
+                                      <EmptySpace max="32767" attributes="0"/>
                                   </Group>
                                   <Group type="102" attributes="0">
                                       <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
@@ -130,10 +130,10 @@
                                               <Component id="cepLabel" min="-2" max="-2" attributes="0"/>
                                           </Group>
                                       </Group>
-                                      <EmptySpace min="0" pref="78" max="32767" attributes="0"/>
+                                      <EmptySpace min="0" pref="120" max="32767" attributes="0"/>
                                   </Group>
                                   <Group type="102" alignment="0" attributes="0">
-                                      <Component id="lblIdClientes" min="-2" pref="61" max="-2" attributes="0"/>
+                                      <Component id="lblIdClientes" min="-2" pref="57" max="-2" attributes="0"/>
                                       <EmptySpace type="separate" max="-2" attributes="0"/>
                                       <Component id="nomeDonoLabel" min="-2" max="-2" attributes="0"/>
                                       <EmptySpace max="-2" attributes="0"/>
@@ -170,12 +170,12 @@
               </Group>
               <EmptySpace type="separate" max="-2" attributes="0"/>
               <Component id="jScrollPane1" min="-2" pref="86" max="-2" attributes="0"/>
-              <EmptySpace type="separate" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="20" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="idClientesLabel" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="lblIdClientes" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="nomeDonoLabel" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="lblNomeDono" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="lblIdClientes" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
@@ -235,7 +235,7 @@
               </Group>
               <EmptySpace type="separate" max="-2" attributes="0"/>
               <Component id="btnVoltar" min="-2" max="-2" attributes="0"/>
-              <EmptySpace pref="19" max="32767" attributes="0"/>
+              <EmptySpace pref="17" max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -327,17 +327,30 @@
         <Property name="text" type="java.lang.String" value="Ponto de Refer&#xea;ncia:"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JTextField" name="lblIdClientes">
-    </Component>
     <Component class="javax.swing.JTextField" name="lblNomeDono">
+      <Properties>
+        <Property name="enabled" type="boolean" value="false"/>
+      </Properties>
     </Component>
     <Component class="javax.swing.JTextField" name="lblTelefone">
+      <Properties>
+        <Property name="enabled" type="boolean" value="false"/>
+      </Properties>
     </Component>
     <Component class="javax.swing.JTextField" name="lblCelular">
+      <Properties>
+        <Property name="enabled" type="boolean" value="false"/>
+      </Properties>
     </Component>
     <Component class="javax.swing.JTextField" name="lblCpf">
+      <Properties>
+        <Property name="enabled" type="boolean" value="false"/>
+      </Properties>
     </Component>
     <Component class="javax.swing.JTextField" name="lblRg">
+      <Properties>
+        <Property name="enabled" type="boolean" value="false"/>
+      </Properties>
     </Component>
     <Component class="javax.swing.JLabel" name="idClientesLabel">
       <Properties>
@@ -345,6 +358,9 @@
       </Properties>
     </Component>
     <Component class="javax.swing.JTextField" name="lblCnpj">
+      <Properties>
+        <Property name="enabled" type="boolean" value="false"/>
+      </Properties>
     </Component>
     <Component class="javax.swing.JLabel" name="nomeDonoLabel">
       <Properties>
@@ -352,6 +368,9 @@
       </Properties>
     </Component>
     <Component class="javax.swing.JTextField" name="lblEmail">
+      <Properties>
+        <Property name="enabled" type="boolean" value="false"/>
+      </Properties>
     </Component>
     <Component class="javax.swing.JLabel" name="telefoneLabel">
       <Properties>
@@ -364,8 +383,14 @@
       </Properties>
     </Component>
     <Component class="javax.swing.JTextField" name="lblRua">
+      <Properties>
+        <Property name="enabled" type="boolean" value="false"/>
+      </Properties>
     </Component>
     <Component class="javax.swing.JTextField" name="lblNumero">
+      <Properties>
+        <Property name="enabled" type="boolean" value="false"/>
+      </Properties>
     </Component>
     <Component class="javax.swing.JLabel" name="cpfLabel">
       <Properties>
@@ -373,6 +398,9 @@
       </Properties>
     </Component>
     <Component class="javax.swing.JTextField" name="lblComplemento">
+      <Properties>
+        <Property name="enabled" type="boolean" value="false"/>
+      </Properties>
     </Component>
     <Component class="javax.swing.JLabel" name="rgLabel">
       <Properties>
@@ -380,6 +408,9 @@
       </Properties>
     </Component>
     <Component class="javax.swing.JTextField" name="lblBairro">
+      <Properties>
+        <Property name="enabled" type="boolean" value="false"/>
+      </Properties>
     </Component>
     <Component class="javax.swing.JLabel" name="cnpjLabel">
       <Properties>
@@ -387,6 +418,9 @@
       </Properties>
     </Component>
     <Component class="javax.swing.JTextField" name="lblMunicipio">
+      <Properties>
+        <Property name="enabled" type="boolean" value="false"/>
+      </Properties>
     </Component>
     <Component class="javax.swing.JLabel" name="emailLabel">
       <Properties>
@@ -394,6 +428,9 @@
       </Properties>
     </Component>
     <Component class="javax.swing.JTextField" name="lblEstado">
+      <Properties>
+        <Property name="enabled" type="boolean" value="false"/>
+      </Properties>
     </Component>
     <Component class="javax.swing.JLabel" name="ruaLabel">
       <Properties>
@@ -401,6 +438,9 @@
       </Properties>
     </Component>
     <Component class="javax.swing.JTextField" name="lblCep">
+      <Properties>
+        <Property name="enabled" type="boolean" value="false"/>
+      </Properties>
     </Component>
     <Component class="javax.swing.JLabel" name="numeroLabel">
       <Properties>
@@ -408,6 +448,9 @@
       </Properties>
     </Component>
     <Component class="javax.swing.JTextField" name="lblPontoRef">
+      <Properties>
+        <Property name="enabled" type="boolean" value="false"/>
+      </Properties>
     </Component>
     <Component class="javax.swing.JButton" name="btnVoltar">
       <Properties>
@@ -419,6 +462,11 @@
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnVoltarActionPerformed"/>
       </Events>
+    </Component>
+    <Component class="javax.swing.JFormattedTextField" name="lblIdClientes">
+      <Properties>
+        <Property name="enabled" type="boolean" value="false"/>
+      </Properties>
     </Component>
   </SubComponents>
 </Form>

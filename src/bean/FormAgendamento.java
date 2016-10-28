@@ -388,10 +388,10 @@ public class FormAgendamento extends JPanel {
         
         try {
             String sql = "insert into horasMarcadas(HorasMarcadas)values(?)";
-            String sql2 = "insert into Agendamento(hora)values(?)";
+            //String sql2 = "insert into Agendamento(hora)values(?)";
             this.salvarData(jDateChooser1.getDate());
             pstSalvarHorario = con.prepareStatement(sql);
-            pstSalvarHorario = con.prepareStatement(sql2);
+            //pstSalvarHorario = con.prepareStatement(sql2);
             pstSalvarHorario.setString(1,(String) cmbHorario.getSelectedItem());
             pstSalvarHorario.executeUpdate();
         } catch (SQLException ex) {
