@@ -43,8 +43,20 @@ public class TabelaClientes extends javax.swing.JFrame {
             pst.setString(1,lblPesquisarCliente.getText()+"%");
             rs = pst.executeQuery();
             tblClientes.setModel(DbUtils.resultSetToTableModel(rs));
-            
-                       
+        } catch(SQLException error){
+            JOptionPane.showMessageDialog(null, error);
+        }
+    }
+    
+    public void mostrarAnimais(){
+        String sql = "select NomeAnimal from Animais where Clientes_idClientes like ?";
+        
+        try{
+            pst = con.prepareStatement(sql);      
+            pst.setString(1,tblClientes.getSelectedRow()+"%");
+            rs = pst.executeQuery();
+            tblAnimais.setModel(DbUtils.resultSetToTableModel(rs));
+           
         } catch(SQLException error){
             JOptionPane.showMessageDialog(null, error);
         }
@@ -119,6 +131,8 @@ public class TabelaClientes extends javax.swing.JFrame {
         lblPontoRef = new javax.swing.JTextField();
         btnVoltar = new javax.swing.JButton();
         lblIdClientes = new javax.swing.JFormattedTextField();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        tblAnimais = new javax.swing.JTable();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setBackground(new java.awt.Color(255, 204, 204));
@@ -211,10 +225,22 @@ public class TabelaClientes extends javax.swing.JFrame {
 
         lblIdClientes.setEnabled(false);
 
+        tblAnimais.setBackground(new java.awt.Color(255, 204, 204));
+        tblAnimais.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                tblAnimaisMouseClicked(evt);
+            }
+        });
+        jScrollPane2.setViewportView(tblAnimais);
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(304, 304, 304)
+                .addComponent(btnVoltar)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
@@ -292,12 +318,11 @@ public class TabelaClientes extends javax.swing.JFrame {
                         .addComponent(jLabel1)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(lblPesquisarCliente, javax.swing.GroupLayout.PREFERRED_SIZE, 326, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(0, 0, Short.MAX_VALUE)))
+                        .addGap(0, 0, Short.MAX_VALUE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(jScrollPane2)))
                 .addContainerGap())
-            .addGroup(layout.createSequentialGroup()
-                .addGap(300, 300, 300)
-                .addComponent(btnVoltar)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -361,8 +386,10 @@ public class TabelaClientes extends javax.swing.JFrame {
                     .addComponent(pontoReferenciaLabel)
                     .addComponent(lblPontoRef, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 86, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 15, Short.MAX_VALUE)
                 .addComponent(btnVoltar)
-                .addContainerGap(17, Short.MAX_VALUE))
+                .addContainerGap())
         );
 
         pack();
@@ -378,7 +405,12 @@ public class TabelaClientes extends javax.swing.JFrame {
 
     private void tblClientesMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tblClientesMouseClicked
         mostrarInformacoes();
+        mostrarAnimais();
     }//GEN-LAST:event_tblClientesMouseClicked
+
+    private void tblAnimaisMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tblAnimaisMouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_tblAnimaisMouseClicked
 
     /**
      * @param args the command line arguments
@@ -436,6 +468,7 @@ public class TabelaClientes extends javax.swing.JFrame {
     private javax.swing.JLabel idClientesLabel;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JTextField lblBairro;
     private javax.swing.JTextField lblCelular;
     private javax.swing.JTextField lblCep;
@@ -459,6 +492,7 @@ public class TabelaClientes extends javax.swing.JFrame {
     private javax.swing.JLabel pontoReferenciaLabel;
     private javax.swing.JLabel rgLabel;
     private javax.swing.JLabel ruaLabel;
+    private javax.swing.JTable tblAnimais;
     private javax.swing.JTable tblClientes;
     private javax.swing.JLabel telefone2Label;
     private javax.swing.JLabel telefoneLabel;

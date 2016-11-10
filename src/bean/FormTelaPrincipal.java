@@ -24,6 +24,7 @@ public class FormTelaPrincipal extends javax.swing.JFrame {
     
     public void BtnSair(){
         //ação fechar programa
+       System.exit(0);
     }
 
     /**
@@ -88,7 +89,7 @@ public class FormTelaPrincipal extends javax.swing.JFrame {
         });
 
         btnAgendarServiço.setBackground(new java.awt.Color(255, 204, 204));
-        btnAgendarServiço.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ImagensSistema/CachorroBotão.jpg"))); // NOI18N
+        btnAgendarServiço.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ImagensSistema/Imagem cachorro fundo rosa.jpg"))); // NOI18N
         btnAgendarServiço.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnAgendarServiçoActionPerformed(evt);
@@ -273,7 +274,7 @@ public class FormTelaPrincipal extends javax.swing.JFrame {
     }//GEN-LAST:event_menuClientesActionPerformed
 
     private void menuSairSistemaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuSairSistemaActionPerformed
-        
+        BtnSair();
     }//GEN-LAST:event_menuSairSistemaActionPerformed
 
     /**

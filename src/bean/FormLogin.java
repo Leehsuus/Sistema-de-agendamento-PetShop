@@ -45,6 +45,7 @@ public class FormLogin extends javax.swing.JFrame {
             
             if(rs.next()){
                 FormTelaPrincipal.main(null);
+                this.dispose();
             } else{
                 JOptionPane.showMessageDialog(null,"Usuário ou senha inválidos! ");
             }
@@ -157,12 +158,11 @@ public class FormLogin extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnCancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCancelarActionPerformed
-        // TODO add your handling code here:
+        System.exit(0);
     }//GEN-LAST:event_btnCancelarActionPerformed
 
     private void btnEntrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEntrarActionPerformed
       Logar();
-      this.dispose();
     }//GEN-LAST:event_btnEntrarActionPerformed
 
     /**
