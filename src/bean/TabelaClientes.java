@@ -49,11 +49,12 @@ public class TabelaClientes extends javax.swing.JFrame {
     }
     
     public void mostrarAnimais(){
+        tblClientes.getSelectedRow();
         String sql = "select NomeAnimal from Animais where Clientes_idClientes like ?";
         
         try{
             pst = con.prepareStatement(sql);      
-            pst.setString(1,tblClientes.getSelectedRow()+"%");
+            pst.setString(1,tblClientes.getSelectedRow()+1 +"%");
             rs = pst.executeQuery();
             tblAnimais.setModel(DbUtils.resultSetToTableModel(rs));
            

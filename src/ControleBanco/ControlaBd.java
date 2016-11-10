@@ -18,7 +18,7 @@ public class ControlaBd {
     public static Connection conectaBd() throws ClassNotFoundException{
         try{
             Class.forName("com.mysql.jdbc.Driver");
-            Connection con = DriverManager.getConnection("jdbc:mysql://localhost/dbPet","root","");
+            Connection con = DriverManager.getConnection("jdbc:mysql://localhost/dbPet","root","rafaelajulia");
             JOptionPane.showMessageDialog(null,"Conectado com o banco");
             return con;
             
