@@ -49,8 +49,7 @@ public class TabelaClientes extends javax.swing.JFrame {
     }
     
     public void mostrarAnimais(){
-        tblClientes.getSelectedRow();
-        String sql = "select NomeAnimal from Animais where Clientes_idClientes like ?";
+        String sql = "select NomeAnimal,TipoAnimal from Animais where Clientes_idClientes like ?";
         
         try{
             pst = con.prepareStatement(sql);      

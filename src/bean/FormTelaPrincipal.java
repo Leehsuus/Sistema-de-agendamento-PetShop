@@ -73,7 +73,7 @@ public class FormTelaPrincipal extends javax.swing.JFrame {
         setForeground(java.awt.Color.white);
 
         btnNovoCliente.setBackground(new java.awt.Color(255, 204, 204));
-        btnNovoCliente.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ImagensSistema/GatoCachorroBotao.png"))); // NOI18N
+        btnNovoCliente.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ImagensSistema/botão_gato_novoCliente.png"))); // NOI18N
         btnNovoCliente.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnNovoClienteActionPerformed(evt);
@@ -81,7 +81,7 @@ public class FormTelaPrincipal extends javax.swing.JFrame {
         });
 
         btnAgenda.setBackground(new java.awt.Color(255, 204, 204));
-        btnAgenda.setText("Agenda");
+        btnAgenda.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ImagensSistema/botão_coelho_agenda.png"))); // NOI18N
         btnAgenda.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnAgendaActionPerformed(evt);
@@ -89,7 +89,7 @@ public class FormTelaPrincipal extends javax.swing.JFrame {
         });
 
         btnAgendarServiço.setBackground(new java.awt.Color(255, 204, 204));
-        btnAgendarServiço.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ImagensSistema/Imagem cachorro fundo rosa.jpg"))); // NOI18N
+        btnAgendarServiço.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ImagensSistema/botão_cachorro_agendar.png"))); // NOI18N
         btnAgendarServiço.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnAgendarServiçoActionPerformed(evt);
@@ -99,6 +99,7 @@ public class FormTelaPrincipal extends javax.swing.JFrame {
         menuCadastrar.setText("Cadastrar");
 
         menuCadastrarCliente.setBackground(new java.awt.Color(255, 204, 204));
+        menuCadastrarCliente.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ImagensSistema/icone_clientes.png"))); // NOI18N
         menuCadastrarCliente.setText("Cliente");
         menuCadastrarCliente.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -108,6 +109,7 @@ public class FormTelaPrincipal extends javax.swing.JFrame {
         menuCadastrar.add(menuCadastrarCliente);
 
         menuCadastrarAnimal.setBackground(new java.awt.Color(255, 204, 204));
+        menuCadastrarAnimal.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ImagensSistema/icone_animais.png"))); // NOI18N
         menuCadastrarAnimal.setText("Animal");
         menuCadastrarAnimal.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -117,6 +119,7 @@ public class FormTelaPrincipal extends javax.swing.JFrame {
         menuCadastrar.add(menuCadastrarAnimal);
 
         cadastrarUsuario.setBackground(new java.awt.Color(255, 204, 204));
+        cadastrarUsuario.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ImagensSistema/icone_usuario.png"))); // NOI18N
         cadastrarUsuario.setText("Usuário");
         cadastrarUsuario.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -130,6 +133,7 @@ public class FormTelaPrincipal extends javax.swing.JFrame {
         menuAgendamento.setText("Agendamento");
 
         menuAgendar.setBackground(new java.awt.Color(255, 204, 204));
+        menuAgendar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ImagensSistema/icone_agenda.png"))); // NOI18N
         menuAgendar.setText("Agendar serviço");
         menuAgendar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -143,6 +147,7 @@ public class FormTelaPrincipal extends javax.swing.JFrame {
         menuConsultar.setText("Consultar");
 
         menuAgenda.setBackground(new java.awt.Color(255, 204, 204));
+        menuAgenda.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ImagensSistema/icone_agenda.png"))); // NOI18N
         menuAgenda.setText("Agenda");
         menuAgenda.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -152,6 +157,7 @@ public class FormTelaPrincipal extends javax.swing.JFrame {
         menuConsultar.add(menuAgenda);
 
         menuClientes.setBackground(new java.awt.Color(255, 204, 204));
+        menuClientes.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ImagensSistema/icone_clientes.png"))); // NOI18N
         menuClientes.setText("Clientes");
         menuClientes.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -161,6 +167,7 @@ public class FormTelaPrincipal extends javax.swing.JFrame {
         menuConsultar.add(menuClientes);
 
         menuServiços.setBackground(new java.awt.Color(255, 204, 204));
+        menuServiços.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ImagensSistema/icone_serviço.png"))); // NOI18N
         menuServiços.setText("Serviços/Preços");
         menuServiços.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -170,6 +177,7 @@ public class FormTelaPrincipal extends javax.swing.JFrame {
         menuConsultar.add(menuServiços);
 
         menuUsuarios.setBackground(new java.awt.Color(255, 204, 204));
+        menuUsuarios.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ImagensSistema/icone_usuario.png"))); // NOI18N
         menuUsuarios.setText("Usuários");
         menuUsuarios.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -182,6 +190,7 @@ public class FormTelaPrincipal extends javax.swing.JFrame {
 
         menuOpcoes.setText("Opções");
 
+        menuSairSistema.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ImagensSistema/icone_sair.png"))); // NOI18N
         menuSairSistema.setText("Sair");
         menuSairSistema.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -204,24 +213,20 @@ public class FormTelaPrincipal extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(btnNovoCliente, javax.swing.GroupLayout.PREFERRED_SIZE, 79, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(btnAgendarServiço)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(btnAgenda, javax.swing.GroupLayout.PREFERRED_SIZE, 111, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(84, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(btnAgendarServiço, javax.swing.GroupLayout.PREFERRED_SIZE, 79, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(btnAgenda, javax.swing.GroupLayout.PREFERRED_SIZE, 79, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(160, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(btnNovoCliente, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(btnAgendarServiço, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(76, 76, 76)
-                        .addComponent(btnAgenda)))
+                    .addComponent(btnAgenda)
+                    .addComponent(btnAgendarServiço, javax.swing.GroupLayout.PREFERRED_SIZE, 119, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnNovoCliente))
                 .addContainerGap(168, Short.MAX_VALUE))
         );
 
