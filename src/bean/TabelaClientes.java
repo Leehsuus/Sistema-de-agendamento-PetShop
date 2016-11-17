@@ -31,12 +31,14 @@ public class TabelaClientes extends javax.swing.JFrame {
     public TabelaClientes() throws ClassNotFoundException {
         initComponents();
         this.getContentPane().setBackground(new Color (255,204,204));
+        //this.setLocationRelativeTo(null);
         con = ControlaBd.conectaBd();
     }
     
     
     public void pesquisarClientes(){
         String sql = "select * from clientes where NomeDono like ?";
+        tblClientes.setCellSelectionEnabled(false);
         
         try{
             pst = con.prepareStatement(sql);
@@ -56,7 +58,6 @@ public class TabelaClientes extends javax.swing.JFrame {
             pst.setString(1,tblClientes.getSelectedRow()+1 +"%");
             rs = pst.executeQuery();
             tblAnimais.setModel(DbUtils.resultSetToTableModel(rs));
-           
         } catch(SQLException error){
             JOptionPane.showMessageDialog(null, error);
         }
@@ -146,6 +147,14 @@ public class TabelaClientes extends javax.swing.JFrame {
         jLabel1.setText("Pesquisar:");
 
         tblClientes.setBackground(new java.awt.Color(255, 204, 204));
+        tblClientes.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+
+            },
+            new String [] {
+
+            }
+        ));
         tblClientes.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 tblClientesMouseClicked(evt);
@@ -401,6 +410,7 @@ public class TabelaClientes extends javax.swing.JFrame {
 
     private void btnVoltarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVoltarActionPerformed
         // TODO add your handling code here:
+        dispose();
     }//GEN-LAST:event_btnVoltarActionPerformed
 
     private void tblClientesMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tblClientesMouseClicked

@@ -23,7 +23,7 @@ public class ControlaBd {
             return con;
             
         } catch (ClassNotFoundException ex){
-            System.out.println("Classa não encontrada, adicione o driver nas bibliotecas");
+            System.out.println("Classe não encontrada, adicione o driver nas bibliotecas");
             Logger.getLogger(FormAgendamento.class.getName()).log(Level.SEVERE, null, ex);
         } catch(SQLException e){
             System.out.println(e);

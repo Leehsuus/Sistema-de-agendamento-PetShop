@@ -31,6 +31,7 @@ public class FormLogin extends javax.swing.JFrame {
         initComponents();
         con = ControlaBd.conectaBd();
         this.getContentPane().setBackground(new Color (255,204,204));
+        this.setLocationRelativeTo(null);
     }
     
     public void Logar(){

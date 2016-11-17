@@ -72,7 +72,7 @@
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Component id="loginField" alignment="0" pref="293" max="32767" attributes="0"/>
                           <Component id="nomeField" alignment="0" pref="293" max="32767" attributes="0"/>
-                          <Component id="jPasswordField1" max="32767" attributes="0"/>
+                          <Component id="lblSenha" max="32767" attributes="0"/>
                           <Group type="102" attributes="0">
                               <Component id="idUsuariosField" min="-2" pref="60" max="-2" attributes="0"/>
                               <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
@@ -89,7 +89,7 @@
                       <EmptySpace max="-2" attributes="0"/>
                       <Component id="refreshButton" linkSize="1" min="-2" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
-                      <Component id="jButton1" min="-2" pref="71" max="-2" attributes="0"/>
+                      <Component id="btnVoltar" min="-2" pref="71" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
                       <Component id="saveButton" linkSize="1" min="-2" max="-2" attributes="0"/>
                   </Group>
@@ -121,7 +121,7 @@
               <EmptySpace max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="senhaLabel" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="jPasswordField1" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="lblSenha" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
@@ -133,7 +133,7 @@
                   <Component id="refreshButton" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="deleteButton" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="newButton" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="jButton1" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="btnVoltar" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="saveButton" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace pref="29" max="32767" attributes="0"/>
@@ -229,9 +229,6 @@
       </BindingProperties>
     </Component>
     <Component class="javax.swing.JTextField" name="nomeField">
-      <Properties>
-        <Property name="text" type="java.lang.String" value=""/>
-      </Properties>
       <BindingProperties>
         <BindingProperty name="text" source="masterTable" sourcePath="${selectedElement.nome}" target="nomeField" targetPath="text" updateStrategy="0" immediately="false">
           <Property name="incompletePathValue" type="java.lang.String" value="null"/>
@@ -240,9 +237,6 @@
       </BindingProperties>
     </Component>
     <Component class="javax.swing.JTextField" name="loginField">
-      <Properties>
-        <Property name="text" type="java.lang.String" value=""/>
-      </Properties>
       <BindingProperties>
         <BindingProperty name="text" source="masterTable" sourcePath="${selectedElement.login}" target="loginField" targetPath="text" updateStrategy="0" immediately="false">
           <Property name="incompletePathValue" type="java.lang.String" value="null"/>
@@ -318,10 +312,10 @@
         <Property name="text" type="java.lang.String" value="Confirmar senha:"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JPasswordField" name="jPasswordField1">
+    <Component class="javax.swing.JPasswordField" name="lblSenha">
       <BindingProperties>
-        <BindingProperty name="text" source="masterTable" sourcePath="${selectedElement.senha}" target="jPasswordField1" targetPath="text" updateStrategy="0" immediately="false"/>
-        <BindingProperty name="enabled" source="masterTable" sourcePath="${selectedElement != null}" target="jPasswordField1" targetPath="enabled" updateStrategy="0" immediately="false"/>
+        <BindingProperty name="text" source="masterTable" sourcePath="${selectedElement.senha}" target="lblSenha" targetPath="text" updateStrategy="0" immediately="false"/>
+        <BindingProperty name="enabled" source="masterTable" sourcePath="${selectedElement != null}" target="lblSenha" targetPath="enabled" updateStrategy="0" immediately="false"/>
       </BindingProperties>
     </Component>
     <Component class="javax.swing.JPasswordField" name="lblConfirmarSenha">
@@ -329,7 +323,7 @@
         <BindingProperty name="enabled" source="masterTable" sourcePath="${selectedElement != null}" target="lblConfirmarSenha" targetPath="enabled" updateStrategy="0" immediately="false"/>
       </BindingProperties>
     </Component>
-    <Component class="javax.swing.JButton" name="jButton1">
+    <Component class="javax.swing.JButton" name="btnVoltar">
       <Properties>
         <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
           <Color blue="cc" green="cc" red="ff" type="rgb"/>
@@ -337,7 +331,7 @@
         <Property name="text" type="java.lang.String" value="Voltar"/>
       </Properties>
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton1ActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnVoltarActionPerformed"/>
       </Events>
     </Component>
   </SubComponents>

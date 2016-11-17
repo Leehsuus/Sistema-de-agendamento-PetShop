@@ -8,8 +8,15 @@ package bean;
 import java.awt.EventQueue;
 import java.beans.Beans;
 import java.util.ArrayList;
+import ControleBanco.ControlaBd;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
 
 import java.util.List;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.persistence.RollbackException;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
@@ -20,11 +27,31 @@ import javax.swing.JPanel;
  * @author Leticia
  */
 public class FormCadastrarAnimais extends JPanel {
+    Connection con = null;
+    PreparedStatement pst = null;
+    ResultSet rs = null;
     
-    public FormCadastrarAnimais() {
+    public FormCadastrarAnimais() throws ClassNotFoundException {
         initComponents();
         if (!Beans.isDesignTime()) {
             entityManager.getTransaction().begin();
+        }
+        con = ControlaBd.conectaBd();
+    }
+    
+    public void listarClientes(){
+        String sql = "select NomeDono from Clientes order by NomeDono";
+        
+        try{
+            pst = con.prepareStatement(sql);
+            rs = pst.executeQuery();
+            
+            while(rs.next()){
+                cmbDonoAnimal.addItem(rs.getString("NomeDono"));
+            }
+            
+        } catch(SQLException ex){
+            JOptionPane.showMessageDialog(null, ex);
         }
     }
 
@@ -179,10 +206,6 @@ public class FormCadastrarAnimais extends JPanel {
 
         deleteButton.addActionListener(formListener);
 
-        org.jdesktop.swingbinding.JComboBoxBinding jComboBoxBinding = org.jdesktop.swingbinding.SwingBindings.createJComboBoxBinding(org.jdesktop.beansbinding.AutoBinding.UpdateStrategy.READ_WRITE, clientesList, cmbDonoAnimal);
-        bindingGroup.addBinding(jComboBoxBinding);
-        binding = org.jdesktop.beansbinding.Bindings.createAutoBinding(org.jdesktop.beansbinding.AutoBinding.UpdateStrategy.READ_WRITE, masterTable, org.jdesktop.beansbinding.ELProperty.create("${selectedElement.clientesidClientes}"), cmbDonoAnimal, org.jdesktop.beansbinding.BeanProperty.create("selectedItem"));
-        bindingGroup.addBinding(binding);
         binding = org.jdesktop.beansbinding.Bindings.createAutoBinding(org.jdesktop.beansbinding.AutoBinding.UpdateStrategy.READ_WRITE, masterTable, org.jdesktop.beansbinding.ELProperty.create("${selectedElement != null}"), cmbDonoAnimal, org.jdesktop.beansbinding.BeanProperty.create("enabled"));
         bindingGroup.addBinding(binding);
 
@@ -260,7 +283,7 @@ public class FormCadastrarAnimais extends JPanel {
                     .addComponent(idAnimaisLabel)
                     .addComponent(idAnimaisField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(clientesidClientesLabel)
-                    .addComponent(cmbDonoAnimal, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(cmbDonoAnimal, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(nomeAnimalLabel)
@@ -347,12 +370,14 @@ public class FormCadastrarAnimais extends JPanel {
         int row = list.size() - 1;
         masterTable.setRowSelectionInterval(row, row);
         masterTable.scrollRectToVisible(masterTable.getCellRect(row, 0, true));
+        this.listarClientes();
     }//GEN-LAST:event_newButtonActionPerformed
     
     private void saveButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_saveButtonActionPerformed
         try {
             entityManager.getTransaction().commit();
             entityManager.getTransaction().begin();
+            JOptionPane.showMessageDialog(null, "Salvo com sucesso!","Salvo", JOptionPane.OK_OPTION);
         } catch (RollbackException rex) {
             rex.printStackTrace();
             entityManager.getTransaction().begin();
@@ -362,8 +387,6 @@ public class FormCadastrarAnimais extends JPanel {
             }
             list.clear();
             list.addAll(merged);
-            
-            JOptionPane.showMessageDialog(null, "Salvo com sucesso!","Salvo", JOptionPane.OK_OPTION);
         }
     }//GEN-LAST:event_saveButtonActionPerformed
 
@@ -429,9 +452,19 @@ public class FormCadastrarAnimais extends JPanel {
 
         /* Create and display the form */
         EventQueue.invokeLater(new Runnable() {
+            @Override
             public void run() {
                 JFrame frame = new JFrame();
-                frame.setContentPane(new FormCadastrarAnimais());
+                //abrir janela no meio da tela
+                java.awt.Dimension screenSize = java.awt.Toolkit.getDefaultToolkit().getScreenSize();
+                int x = (int) screenSize.getWidth()/4;
+                int y = (int) screenSize.getHeight()/5;
+                frame.setLocation(x, y);
+                try {
+                    frame.setContentPane(new FormCadastrarAnimais());
+                } catch (ClassNotFoundException ex) {
+                    Logger.getLogger(FormCadastrarAnimais.class.getName()).log(Level.SEVERE, null, ex);
+                }
                 frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
                 frame.pack();
                 frame.setVisible(true);

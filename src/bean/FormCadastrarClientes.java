@@ -14,6 +14,7 @@ import javax.persistence.RollbackException;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 
+
 /**
  *
  * @author Leticia
@@ -26,6 +27,10 @@ public class FormCadastrarClientes extends JPanel {
             entityManager.getTransaction().begin();
         }
     }
+    
+    /*public void fecharJanela(){
+        dispose();
+    }*/
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -521,8 +526,6 @@ public class FormCadastrarClientes extends JPanel {
         }
         FormCadastrarAnimais.main(null);
         
-        
-        
     }//GEN-LAST:event_btnProximoActionPerformed
 
     private void btnVoltarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVoltarActionPerformed
@@ -601,8 +604,14 @@ public class FormCadastrarClientes extends JPanel {
 
         /* Create and display the form */
         EventQueue.invokeLater(new Runnable() {
+            @Override
             public void run() {
                 JFrame frame = new JFrame();
+                //abrir janela no meio da tela
+                java.awt.Dimension screenSize = java.awt.Toolkit.getDefaultToolkit().getScreenSize();
+                int x = (int) screenSize.getWidth()/4;
+                int y = (int) screenSize.getHeight()/5;
+                frame.setLocation(x, y);
                 frame.setContentPane(new FormCadastrarClientes());
                 frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
                 frame.pack();

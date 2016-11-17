@@ -238,8 +238,7 @@ public class FormTelaPrincipal extends javax.swing.JFrame {
     }//GEN-LAST:event_menuCadastrarClienteActionPerformed
 
     private void menuServiçosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuServiçosActionPerformed
-        TabelaServiços.main(null);
-        
+        TabelaServiços.main(null);    
     }//GEN-LAST:event_menuServiçosActionPerformed
 
     private void menuCadastrarAnimalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuCadastrarAnimalActionPerformed

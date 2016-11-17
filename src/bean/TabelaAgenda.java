@@ -14,6 +14,7 @@ public class TabelaAgenda extends javax.swing.JFrame {
     public TabelaAgenda() {
         initComponents();
         this.getContentPane().setBackground(new Color (255,204,204));
+        this.setLocationRelativeTo(null);
     }
 
     /**
@@ -95,7 +96,6 @@ public class TabelaAgenda extends javax.swing.JFrame {
 
     private void btnVoltarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVoltarActionPerformed
         // TODO add your handling code here:
-        FormTelaPrincipal.main(null);
         dispose();
     }//GEN-LAST:event_btnVoltarActionPerformed
 
